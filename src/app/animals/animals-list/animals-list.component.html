@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row mb-3 text-center" *ngFor="let animal of data?.animals">
+		<div class="col-md-4 themed-grid-col">{{animal.name}}</div>
+		<div class="col-md-4 themed-grid-col">{{animal.id}}</div>
+		<div class="col-md-4 themed-grid-col">
+		<button class="btn btn-primary rounded-circle p-2 lh-1" type="button" title="Remove" (click)="removeAnimal(animal)">
+			<i class="bi bi-x-lg"></i>
+		</button>
+		</div>
+    </div>
+</div>
+
+<div class="row mb-3 text-center">
+	<div class="col-md-8 themed-grid-col" *ngIf="data && pages > 1">
+		<button class="btn btn-outline-secondary d-inline-flex align-items-center" type="button" title="Previous page"
+			[disabled]="data.page <= 1"
+			[routerLink]="['/animals', data.page - 1, data.limit]">
+			<i class="bi bi-arrow-left-short"></i>
+			Prev
+		</button>
+		<p class="pager">Page {{data.page}} of {{ pages }}</p>
+		<button class="btn btn-outline-secondary d-inline-flex align-items-center" type="button" title="Next page"
+			[disabled]="data.page >= pages"
+			[routerLink]="['/animals', data.page + 1, data.limit]">
+			Next
+			<i class="bi bi-arrow-right-short"></i>
+		</button>
+	</div>
+	<div class="col-md-4 themed-grid-col">
+		<button class="btn btn-primary d-inline-flex align-items-center" type="button"
+			[routerLink]="'/animal/new'">
+			Add animal
+			<i class="bi bi-plus"></i>
+		</button>
+	</div>
+  </div>

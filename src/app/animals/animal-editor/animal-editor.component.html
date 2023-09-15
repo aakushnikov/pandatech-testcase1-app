@@ -1,0 +1,16 @@
+<div class="row mb-3 text-center">
+    <div class="col-md-4 themed-grid-col">&nbsp;</div>
+    <div class="col-md-4 themed-grid-col">
+		<form (submit)="addAnimal(animalName.value)">
+			<h1 class="h3 mb-3 fw-normal">Add animal</h1>
+		
+			<div class="form-floating">
+				<input type="text" class="form-control" id="floatingInput" placeholder="" #animalName>
+				<label for="floatingInput">Name</label>
+			</div>
+			<br/>
+			<button class="btn btn-primary w-100 py-2" type="submit">Add</button>
+		</form>
+	</div>
+    <div class="col-md-4 themed-grid-col">&nbsp;</div>
+</div>
